@@ -1,20 +1,24 @@
-import { useConnect, useAccount, useDisconnect } from "wagmi";
+import { useConnect } from "wagmi";
+import { metaMask } from "wagmi/connectors";
+import { useNavigate } from "react-router";
 import styles from "./wallet-connect.module.scss";
 
 const WalletConnect = () => {
-  const { address } = useAccount();
-  const { disconnect } = useDisconnect();
-  const { connectors, connect } = useConnect();
+  const { connect } = useConnect();
+
+  const navigate = useNavigate();
+
+  const handleWalletConnect = async () => {
+    connect({
+      connector: metaMask(),
+    });
+
+    navigate("/");
+  };
 
   return (
     <div className={styles.component}>
-      <p>Address: {address}</p>
-      <button onClick={() => disconnect()}>Disconnect</button>
-      {connectors.map((connector) => (
-        <button key={connector.uid} onClick={() => connect({ connector })}>
-          {connector.name}
-        </button>
-      ))}
+      <button onClick={handleWalletConnect}>Wallet Connect</button>
     </div>
   );
 };
