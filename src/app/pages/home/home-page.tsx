@@ -1,13 +1,10 @@
-import { useAccount, useDisconnect } from "wagmi";
+import WalletInfo from "@/components/wallet-info";
 
 const HomePage = () => {
-  const { address } = useAccount();
-  const { disconnect } = useDisconnect();
   return (
     <div>
       <span>This is a home page</span>
-      <p>Address: {address}</p>
-      <button onClick={() => disconnect()}>Disconnect</button>
+      <WalletInfo />
     </div>
   );
 };

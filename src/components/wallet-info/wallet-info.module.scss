@@ -1,0 +1,19 @@
+.walletInfo {
+  padding: 6px 8px;
+  border-radius: 12px;
+  background-color: red;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.icon {
+  cursor: pointer;
+}
