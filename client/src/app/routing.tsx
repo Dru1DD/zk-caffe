@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router";
-import LoginPage from "./pages/login";
-import PrivateRoute from "./private-route";
-import HomePage from "./pages/home";
+import { Route, Routes } from 'react-router';
+import LoginPage from './pages/main';
+import PrivateRoute from './private-route';
+import HomePage from './pages/home';
 
 const Routing = () => (
   <Routes>
-    <Route path="/login" element={<LoginPage />} />
+    <Route path="/" element={<LoginPage />} />
     <Route element={<PrivateRoute />}>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
     </Route>
   </Routes>
 );

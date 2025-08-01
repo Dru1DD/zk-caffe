@@ -1,11 +1,11 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useAccount } from "wagmi";
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAccount } from 'wagmi';
 
 const PrivateRoute = () => {
   const account = useAccount();
 
   if (!account.address) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return <Outlet />;

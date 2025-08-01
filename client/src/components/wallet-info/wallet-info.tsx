@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router";
-import useCopy from "@/hooks/use-copy";
-import { useAccount, useDisconnect } from "wagmi";
-import { Copy, CopyCheck, LogOut } from "lucide-react";
-import { formatAddress } from "@/utils/address";
-import styles from "./wallet-info.module.scss";
+import { useNavigate } from 'react-router';
+import useCopy from '@/hooks/use-copy';
+import { useAccount, useDisconnect } from 'wagmi';
+import { Copy, CopyCheck, LogOut } from 'lucide-react';
+import { formatAddress } from '@/utils/address';
+import styles from './wallet-info.module.scss';
 
 const WalletInfo = () => {
   const { isCopied, copyToClipboard } = useCopy();
@@ -16,7 +16,7 @@ const WalletInfo = () => {
   const handleDisconnectClicked = () => {
     disconnect();
 
-    navigate("/login");
+    navigate('/login');
   };
 
   const handleCopyClicked = () => {

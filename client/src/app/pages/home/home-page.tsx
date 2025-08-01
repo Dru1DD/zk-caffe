@@ -1,4 +1,4 @@
-import WalletInfo from "@/components/wallet-info";
+import WalletInfo from '@/components/wallet-info';
 
 const HomePage = () => {
   return (

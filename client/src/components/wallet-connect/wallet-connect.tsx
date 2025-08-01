@@ -1,7 +1,7 @@
-import { useConnect } from "wagmi";
-import { metaMask } from "wagmi/connectors";
-import { useNavigate } from "react-router";
-import styles from "./wallet-connect.module.scss";
+import { useConnect } from 'wagmi';
+import { metaMask } from 'wagmi/connectors';
+import { useNavigate } from 'react-router';
+import styles from './wallet-connect.module.scss';
 
 const WalletConnect = () => {
   const { connect } = useConnect();
@@ -13,7 +13,7 @@ const WalletConnect = () => {
       connector: metaMask(),
     });
 
-    navigate("/");
+    navigate('/home');
   };
 
   return (

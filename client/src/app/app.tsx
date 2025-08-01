@@ -1,12 +1,12 @@
-import "@/styles/global.css";
+import '@/styles/global.css';
 
-import { WagmiProvider } from "wagmi";
-import { BrowserRouter } from "react-router";
-import { ToastContainer } from "react-toastify";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ErrorBoundary from "@/components/error-boundary";
-import Routing from "./routing";
-import { wagmiConfig } from "@/lib/wagmi";
+import { WagmiProvider } from 'wagmi';
+import { BrowserRouter } from 'react-router';
+import { ToastContainer } from 'react-toastify';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ErrorBoundary from '@/components/error-boundary';
+import Routing from './routing';
+import { wagmiConfig } from '@/lib/wagmi';
 
 const queryClient = new QueryClient();
 
