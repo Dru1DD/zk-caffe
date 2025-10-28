@@ -1,1 +1,1 @@
-export { default } from './wallet-connect';
+export { default } from "./wallet-connect";

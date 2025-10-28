@@ -1,10 +1,10 @@
+import { useCurrentWallet } from '@mysten/dapp-kit';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAccount } from 'wagmi';
 
 const PrivateRoute = () => {
-  const account = useAccount();
+  const { isConnected } = useCurrentWallet();
 
-  if (!account.address) {
+  if (!isConnected) {
     return <Navigate to="/" replace />;
   }
 
