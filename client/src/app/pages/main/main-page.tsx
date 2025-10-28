@@ -1,5 +1,5 @@
 import ScrollIndicator from '@main/components/scroll-indicator';
-import WalletConnect from '@/components/wallet-connect/wallet-connect';
+import WalletConnect from '@/components/wallet-connect';
 import styles from './main-page.module.scss';
 
 const MainPage = () => {

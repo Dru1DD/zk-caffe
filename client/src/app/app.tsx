@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
+import RegisterEnokiWallets from '@/providers/register-enoki-wallet';
 import { networkConfig } from '@/lib/networkConfig';
 import ErrorBoundary from '@/components/error-boundary';
 import Routing from './routing';
@@ -17,6 +18,7 @@ function App() {
       <ErrorBoundary>
         <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
           <QueryClientProvider client={queryClient}>
+            <RegisterEnokiWallets />
             <WalletProvider>
               <Routing />
             </WalletProvider>
