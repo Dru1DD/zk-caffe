@@ -781,6 +781,14 @@
     "@mysten/utils" "0.2.0"
     "@scure/base" "^1.2.6"
 
+"@mysten/bcs@1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@mysten/bcs/-/bcs-1.9.2.tgz#3bf0e30f14595c9d9e5c142e94b5646ac1318da7"
+  integrity sha512-kBk5xrxV9OWR7i+JhL/plQrgQ2/KJhB2pB5gj+w6GXhbMQwS3DPpOvi/zN0Tj84jwPvHMllpEl0QHj6ywN7/eQ==
+  dependencies:
+    "@mysten/utils" "0.2.0"
+    "@scure/base" "^1.2.6"
+
 "@mysten/enoki@^0.12.8":
   version "0.12.8"
   resolved "https://registry.yarnpkg.com/@mysten/enoki/-/enoki-0.12.8.tgz#659030779e1bf0bdd61a15f44b6933a52756ed8e"
@@ -815,13 +823,34 @@
     "@noble/hashes" "^1.8.0"
     asn1-ts "^8.0.2"
 
-"@mysten/sui@1.43.1", "@mysten/sui@^1.43.1":
+"@mysten/sui@1.43.1":
   version "1.43.1"
   resolved "https://registry.yarnpkg.com/@mysten/sui/-/sui-1.43.1.tgz#23bcfddd357752bbc2aee6d0e604ebb405502fb1"
   integrity sha512-DWD5q+19gi7c+gxtIfqgGlTFAIQlo4jB4bZcEE4SR8Z2hlnY2JK2CYllKSXAkDl9WpIjAe5In9uoQwuzyQ1t+Q==
   dependencies:
     "@graphql-typed-document-node/core" "^3.2.0"
     "@mysten/bcs" "1.9.1"
+    "@mysten/utils" "0.2.0"
+    "@noble/curves" "=1.9.4"
+    "@noble/hashes" "^1.8.0"
+    "@protobuf-ts/grpcweb-transport" "^2.11.1"
+    "@protobuf-ts/runtime" "^2.11.1"
+    "@protobuf-ts/runtime-rpc" "^2.11.1"
+    "@scure/base" "^1.2.6"
+    "@scure/bip32" "^1.7.0"
+    "@scure/bip39" "^1.6.0"
+    gql.tada "^1.8.13"
+    graphql "^16.11.0"
+    poseidon-lite "0.2.1"
+    valibot "^0.36.0"
+
+"@mysten/sui@^1.43.2":
+  version "1.43.2"
+  resolved "https://registry.yarnpkg.com/@mysten/sui/-/sui-1.43.2.tgz#e643e2e30c7ff34104d40289e72527bcb20180e9"
+  integrity sha512-xURMCHrhdVUXLFIUTUM0oRBpYh4nCcLPpn7hNUrWa/gdnABginmwldJpK0R8UjxLv4lEwcYGHeWs2yBl7tqLXg==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.2.0"
+    "@mysten/bcs" "1.9.2"
     "@mysten/utils" "0.2.0"
     "@noble/curves" "=1.9.4"
     "@noble/hashes" "^1.8.0"

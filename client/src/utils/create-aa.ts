@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createKernelAccount, createKernelAccountClient, createZeroDevPaymasterClient, KernelValidator } from "@zerodev/sdk";
 import { getEntryPoint, KERNEL_V3_1 } from "@zerodev/sdk/constants";
 import { createPublicClient, http } from "viem";
@@ -5,6 +6,7 @@ import { arbitrumSepolia } from "viem/chains";
 
 const ZERODEV_RPC = import.meta.env.VITE_ZERODEV_RPC || '';
 const entryPoint = getEntryPoint('0.7');
+
 let kernelAccount: any;
 let kernelClient: any;
 

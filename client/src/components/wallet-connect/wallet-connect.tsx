@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useCurrentAccount, useConnectWallet, useWallets, useDisconnectWallet } from '@mysten/dapp-kit';
+import { useCurrentAccount, useWallets, useDisconnectWallet, useConnectWallet } from '@mysten/dapp-kit';
 import { isEnokiWallet } from '@mysten/enoki';
+import { useNavigate } from 'react-router';
 
 const WalletConnect = () => {
+  const navigate = useNavigate();
   const currentAccount = useCurrentAccount();
 
   const { mutateAsync: connectWallet } = useConnectWallet();
@@ -43,10 +45,12 @@ const WalletConnect = () => {
 
       // Connect with Google zkLogin
       await connectWallet({ wallet: googleWallet });
+
+      navigate('/home');
+
       console.log('Google zkLogin successful!');
     } catch (error) {
       console.error('Google zkLogin failed:', error);
-      alert('Login failed: ' + (error as Error).message);
     }
   };
 

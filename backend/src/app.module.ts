@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import { LoggerService } from './logger';
 import { SuiModule } from './sui';
+import { CaffeeModule } from './caffee';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { SuiModule } from './sui';
       useClass: LoggerService,
     }),
     SuiModule,
+    CaffeeModule,
   ],
 })
 export class AppModule {}
