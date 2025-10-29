@@ -178,3 +178,7 @@ public fun get_total_visits(card: &LoyaltyCard): u64 {
 public fun get_coffee_price(config: &CafeConfig): u64 {
     config.coffee_price
 }
+
+public fun get_config_id(config: &CafeConfig): ID {
+    object::id(config)
+}

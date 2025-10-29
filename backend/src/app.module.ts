@@ -17,4 +17,4 @@ import { CaffeeModule } from './caffee';
     CaffeeModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

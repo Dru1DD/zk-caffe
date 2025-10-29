@@ -21,6 +21,7 @@
     "@zerodev/sdk": "^5.4.41",
     "@zerodev/webauthn-key": "^5.4.4",
     "buffer": "^6.0.3",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.535.0",
     "postcss-assign-layer": "^0.4.0",
     "react": "^19.1.0",

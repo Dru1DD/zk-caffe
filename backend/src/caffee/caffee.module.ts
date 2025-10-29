@@ -4,8 +4,8 @@ import { CaffeeController } from './controllers';
 import { SuiModule } from '../sui/sui.module';
 
 @Module({
-    imports: [SuiModule],
-    controllers: [CaffeeController],
-    providers: [CaffeeService],
+  imports: [SuiModule],
+  controllers: [CaffeeController],
+  providers: [CaffeeService],
 })
-export class CaffeeModule { }
+export class CaffeeModule {}
