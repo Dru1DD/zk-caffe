@@ -1,14 +1,36 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useCurrentAccount, useConnectWallet, useWallets, useDisconnectWallet } from '@mysten/dapp-kit';
+import {
+  useCurrentAccount,
+  useConnectWallet,
+  useWallets,
+  useDisconnectWallet,
+  useSignPersonalMessage,
+} from '@mysten/dapp-kit';
 import { isEnokiWallet } from '@mysten/enoki';
+import { useNavigate } from 'react-router';
+import { fromBase64 } from '@mysten/sui/utils';
+import { useCaffeeLoyalty } from '@/hooks/use-caffee-loyalty';
 
 const WalletConnect = () => {
+  const navigate = useNavigate();
   const currentAccount = useCurrentAccount();
 
   const { mutateAsync: connectWallet } = useConnectWallet();
   const { mutateAsync: disconnectWallet } = useDisconnectWallet();
+  const { mutateAsync: signPersonalMessage } = useSignPersonalMessage();
 
   const wallets = useWallets();
+
+  const loyalty = useCaffeeLoyalty({
+    connected: !!currentAccount,
+    address: currentAccount?.address || '',
+    signAndExecute: async (txData: any) => {
+      // txData is the sponsored transaction from backend (Enoki). Expect { digest, bytes }
+      const { digest, bytes } = txData;
+      const signatureResult = await signPersonalMessage({ message: fromBase64(bytes) });
+      return { digest, signature: signatureResult.signature };
+    },
+  });
 
   const isConnectedViaGoogleZkLogin = () => {
     if (!currentAccount) {
@@ -43,10 +65,15 @@ const WalletConnect = () => {
 
       // Connect with Google zkLogin
       await connectWallet({ wallet: googleWallet });
+
+      const res = await loyalty.createLoyaltyCard('https://i.imgur.com/a/7Zq1yqt');
+
+      console.log('Create loyalty card result', res);
+      navigate('/home');
+
       console.log('Google zkLogin successful!');
     } catch (error) {
       console.error('Google zkLogin failed:', error);
-      alert('Login failed: ' + (error as Error).message);
     }
   };
 
